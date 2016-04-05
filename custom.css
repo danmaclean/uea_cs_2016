@@ -1,0 +1,44 @@
+.reveal .citation, .reveal .contact{
+	  font-size: 18px;
+	  display: block;
+}
+
+.reveal .slides > section.present, .reveal .slides > section > section.present {
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top: 0 !important;
+}
+
+.reveal .bottom_title{
+	background: rgba(0,0,0,0.4);
+    position: fixed;
+    bottom: 0;
+	margin-bottom: 20px;
+	padding: 25px;
+}
+
+.reveal .top_title{
+	background: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+	margin-bottom: 20px;
+	padding: 25px;
+}
+
+.reveal section img{
+	max-width: 100%;
+	
+}
+
+.reveal .small_table{
+	font-size: 18px;
+}
+
+.reveal .acknowledgements{
+    position: fixed;
+    top: 0;
+}
+
