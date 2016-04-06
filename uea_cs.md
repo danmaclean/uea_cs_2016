@@ -706,6 +706,7 @@ Note: Then CHERI-PIC works its way up that list, assigning the fragments to the 
 Note: So we carried out a series of tests, from previous crosses in the literature with positively identified causative mutations. These were in organsisms with well sequenced genomes so we were able to computationally smash up the genome sequence into fragments similar to those we see in real sequencing experiments and compare the order from our process to the real one. And we found in a wide range of experiments and crosses, including in Rice and Arabidopsis, like this one here, and in out- and back-crosses that we did a great job of putting back together the order and from there ... (cont next slide)
 
 
+
 ### CHERI-PIC ranks causative mutations highly
 
 ![](img/ranks.jpg)
@@ -714,39 +715,94 @@ Note: We found that CHERI-PIC put the causative mutation consistently in the top
 
 
 
-## Plant Microbe Interactions
-#### More than epidemiology
+<section data-background="img/copter.jpg">
+	<div class='top_title'>
+		Open hardware solutions for lab and field
+	</div>
+<aside class="notes"> 
+We've been working on combining low cost consumer level computers, specifically Raspberry Pi's and the range of tiny camera units that are availabe with an eye on helping our plant disease interaction research. Sometimes this is for lab based stuff, so in controlled growth rooms but also we are trying to push this into the research field plots that we have. And this means having some sort of mobile platform, For us this is consumer quadcopters and GPS systems that we can hack. You can see here a quadcopter from a kit, a 3D Robotics Quad kit - to be precise, which costs about £500. It carries GPS modules, telemetry and here on the front we’ve stuck a Raspberry Pi. The Quad is autonomous, there's laptop software so that you can program the onboard GPS with a flightplan and just let it off. Alternatively you can fly it with a remote.  
 
-Note: That's everything I wanted to show you - a few interesting projects in plant microbe interactions that I hope have raised your curiosity for this important set of biological systems. I hope at least I've shown that plant and microbe science is about more than just epidemiology and that you'll consider this field when thinking about your research in the future - its a potentially very fruitful, very relevant and very worthwhile field in which mathematical approaches could really make their mark.
+And the GPS unit can talk directly to the Pi. So the copter can reach a way point and send a signal to the Pi that its time to perform an operation, like taking a picture or a reading or something. So for about £700 or so you can build custom extensible drone solutions that you can tailor to your needs.  And that is the basis of a hackable open source remote sensing platform. 
+
+</aside>
+</section>
 
 
 
-<div class="acknowledgements">
-Team MacLean
-<ul>
-	<li>Ghanasyam Rallapalli - Fraxinus</li>
-<li>Carlos Lugo - Effector Models</li>
-<li>Reda Younsi - 2k+2</li>
-<li>Richard Leggett - Bubbleparse</li>
-<li>Martin Page</li>
-<li>Graham Etherington</li>
+<section data-background="img/IR.jpg">
 
-<li><h6>KamounLab - Two Speed Genome</h6></li>
-<li>Sophien Kamoun </li>
-<li>Sylviane Raffaelle</li>
+<aside class="notes"> 
+	
+So the hook for plant health is that pretty much any digital camera is a light sensor array that works in multiple spectra of light including Infrared. The sensor of a digital camera by itself  can read infrared, though most manufacturers stick in a layer of plastic that deliberately filters infrared out.
+And this is really useful for measuring plant health because of a quirk of how healthy plants absorb visible light and even generate some infrared. 
+when the plant is growing well and photosynthesis is going well there is a large absorption of the visible parts of the spectrum. With infrared left over. 
+Basically we see a green plant because the blue and red – and in fact most of the green is absorbed by photosynthetic light capturing apparatus – the photosystems, and what is reflected is mostly green. And almost all the infrared comes back too– though we can’t see that. The amount of infrared that bounces back is also increased when the plant is in high light or doing really well. The plant often cant use all the red green and blue light energy the photosystems have already converted, so photosynthesis has a kind of overflow that lets that energy go as heat and thermal infrared light.
+So all this boils down to is that light reflected from a healthy plant has a greater proportion of infrared than that from an unhealthy plant and that’s a difference we can take advantage of
+</aside>
+</section>
 
-<li>Jones Lab - R gene cloning</li>
-<li>Jonathan Jones </li>
-<li>Walter Verweij </li>
-<li>Cintia Kawashima</li>
-<li>Kamil Witek</li>
 
-<li>Baulcombe Lab - sRNA Nets</li>
-<li>David Baulcombe</li>
-<li>Susi Heimstadt</li>
-<li>Natasha Elina</li>
 
-<li>Studholme Lab - sRNA Nets</li>
-<li>David Studholme</li>
-</ul>
-</div>
+### Healthy plant tissue show up brightest in IR images
+![](img/ndvi.jpg)
+
+Note: This lovely scene here pictured in visible light on the right has been taken in infrared and the image data put through a per channel transformation called NDVI on the left.   As you can see in this picture any non leafy bits show up dead dark, while healthy active bits are bright
+
+And the focus of my groups work is to develop the tools and pipelines for image analysis that will enhance the work that can be done in the field and the lab. Including for plant and crop health and things like genetic screens.
+
+
+
+### Whole/sub-field status
+
+![](img/hists.jpg)
+
+Note: so as an example we've been taking images of wheat lines like this one and using those image methods to quantify photosynthetic capacity well enough to compare within plots. In this image the wheat lines are planted in vertical lines, so we can look at the infrared coming off certain sections of the image corresponding to the lines and make plots like this of infrared enrichment. So in the graph on the right we can see that the plants in the left and centre of the picture have a strong infrared component – the strong blue and green peaks, whereas the plants in the right of the picture shown by the red peak in the graph are reflecting less infrared, so have a weaker peak. 
+
+
+
+### Leaf infection level quantification
+
+![](img/leaves.png)
+
+Note: And also we're getting down to the leaf level. This is an in-lab proof of principle shot measuring disease progression in some infected potato leaves. The red bits are the uninfected tissues and the yellow bit and blue bits are dead or dying off – and we hope that we’ll be able to bring together disease lesion detection for monitoring existence and progression of disease in research labs.  But there’s also potential in this sort of thing as a disease detector in the field, Consider having the drone and Raspberry Pi combination I’ve shown take off each afternoon and scan a field and highlighting potential disease lesions on crops – then simply emailing you the pictures for a human verification. That sort of thing is doable right now.  The overall aim with this project in my group is to try and bring the open source image analysis and hardware options together and develop them into workable open source solutions for common agricultural and research applications. We believe a lot can be accomplished with a little, particularly if you have some niche or developmental requirments.
+
+And that is all I wanted to say.
+
+
+
+<section class="starwars">
+<div id="titles"><div id="titlecontent">
+
+<h2 style="text-align:center;">Acknowledgements</h2>
+<h3 style="text-align:center;">Open Ash Dieback and Fraxinus</h3>
+<p class="center">Shyam Rallapalli</p>
+<p class="center">Team Cooper (Sheffield)</p>
+<p class="center">Allan Downie and Anne Edwards (JIC)</p>
+<p class="center">Sophien Kamoun, Diane Saunders, Kentaro Yoshida and KamounLab (TSL)</p>
+<p class="center">The Genome Analysis Centre</p>
+<p class="center">The Fraxinus Players</p>
+<h3 style="text-align:center;">Theoretical Genomics</h3>
+<p class="center">Carlos Lugo</p>
+<p class="center">Alice Minotto</p>
+<p class="center">Sophien Kamoun (TSL)</p>
+<h3 style="text-align:center;">Mutation Hunters</h3>
+<p class="center">Richard Leggett</p>
+<p class="center">Reda Younsi</p>
+<p class="center">Pilar Corredor Moreno</p>
+<p class="center">Ed Chalstrey</p>
+<p class="center">Shyam Rallapalli</p>
+<p class="center">Jonathan Jones, Eric Ward, Cintia Kawashima, Walter Verweij and Jones Lab (TSL)</p>
+<h3 style="text-align:center;">Drones and Open Pi Image</h3>
+<p class="center">Martin Page</p>
+<p class="center">Alex Webb (University of Cambridge)</p>
+<p class="center">Ksenia Krasileva (TGAC)</p>
+<p class="center">Cristobal Uauy (JIC)</p>
+<p class="center">Phillipa Borrill (JIC)</p>
+<h3 style="text-align:center;">Funding</h3>
+![](img/logo.gif)
+![](img/defra.jpg)
+![](img/fera.jpg)
+![](img/forest_research.jpg)
+![](img/gatsby.png)
+</div></div>
+</section>

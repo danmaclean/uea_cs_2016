@@ -12,10 +12,21 @@
   top: 0 !important;
 }
 
+.reveal .slides > section.starwars.present, .reveal .slides > section > section.starwars.present {
+  min-height: 0% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top: 0 !important;
+}
+
 .reveal .bottom_title{
+
 	background: rgba(0,0,0,0.4);
     position: fixed;
     bottom: 0;
+	margin-top:100px;
 	margin-bottom: 20px;
 	padding: 25px;
 }
